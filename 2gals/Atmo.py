@@ -11,23 +11,23 @@ WAVELENSTEP = 0.5
 class Atmo(object):
     def __init__(self, parameters, airmass, transmission, wavelength, aerosolNormCoeff, aerosolNormWavelen):
         # Airmass
-    	self.X = airmass
+        self.X = airmass
         # List of parameters
-    	self.P = parameters
+        self.P = parameters
         # List of wavelengths
         self.wavelen = wavelength
         # Aerosol normalization coefficient used to model aerosol transmission profile
-    	self.aerosolNormCoeff = aerosolNormCoeff
+        self.aerosolNormCoeff = aerosolNormCoeff
         # Aerosol normalization wavelength used to model aerosol transmission profile
-    	self.aerosolNormWavelen = aerosolNormWavelen
+        self.aerosolNormWavelen = aerosolNormWavelen
         # List of components
-    	self.components = ['H2O','O2','O3','Rayleigh','Aerosol']
+        self.components = ['H2O','O2','O3','Rayleigh','Aerosol']
         # List of total transmission profiles
-    	self.sb = None
+        self.sb = None
         # Component-keyed dictionary of transmission profiles
-    	self.sbDict = None
+        self.sbDict = None
         # Build atmosphere and return object
-    	self._buildAtmo(parameters, airmass, transmission, aerosolNormCoeff, aerosolNormWavelen)
+        self._buildAtmo(parameters, airmass, transmission, aerosolNormCoeff, aerosolNormWavelen)
 
     def _buildAtmo(self, parameters, airmass, transmission, aerosolNormCoeff, aerosolNormWavelen):
         """Builds an atmospheric transmission profile given a set of component parameters and 
